@@ -1,0 +1,94 @@
+Im Normalen vorgehen führen sie den Namen das Programm aus und übergen sie den Dateinamen als Parameter.
+-> ./solver example
+
+Um das Programm zu testen verwenden sie den Parameter "test" das ist ein Schlüsselwort um dem Programm mitzuteilen das dieses getestet wird.
+Getestet werden folgende Scenarien:
+
+Test für falschen Dateinamen: testeFalscherDateiname()
+Test für leere Datei: testeLeereDatei()
+Test für ungültige Eingabe in der ersten Zeile: testeFehlerhafteEingabeErsteZeile()
+Test zur Sicherstellung, dass n nicht null ist: testeNdarfNichtNullSein()
+Test für zu wenige Zeilen: testeZuwEnigZeilen()
+Test für ungültige Eingabe in der ersten Zeile und weiteren Zeilen: testeFehlerhafteEingabeErsteZeileWeitereZeilen()
+Test für falsche Anzahl an Werten: testefalscheAnzahlAnZahlen()
+Test zur Sicherstellung, dass der Vektor b vorhanden ist: testeForhandenSeinVektorB()
+Test für ungültige Eingabe im Vektor b: testeFehlerhafteEingabeVektorB()
+Test für zu viele Werte im Vektor b: testeZuVieleZahlenVektorB()
+Test für zu viele Zeilen: testeZuVieleZeilen()
+Test für erfolgreiche Validierung der Methode: testeEefolgreicheValidierung()
+Test für fehlerhafte Validierung der Methode: testeFehlerhafteValidierung()
+Test für Jacobi-Iteration: testeJacobiIteration()
+Test für Überprüfung der Lösung: testeUeberpruefung()
+
+Diese Scenarien werden in Form von vordefinierten Daten durchgeführt
+
+    TestData data1(
+        "A",
+        {{"10", "-1", "2"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7", "7"},
+        "Fehler: Erste Zeile ist keine gültige Zahl.");
+
+    TestData data2(
+        "-1",
+        {{"10", "-1", "2"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7", "7"},
+        "Fehler: n muss > 0 sein.");
+
+    TestData data3(
+        "3",
+        {{"10", "-1", "2"},{"1", "11", "-1"}},
+        {"7", "7", "7"},
+        "Fehler: Keine Zeile mehr für Vektor b.");
+
+    TestData data4(
+        "3",
+        {{"10", "-1", "A"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7", "7"},
+        "Fehler in Zeile 2: enthaelt nicht nur Zahlen.");
+
+    TestData data5(
+        "3",
+        {{"10", "-1", "2", "4"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7", "7"},
+        "Fehler in Zeile 2: falsche Anzahl Zahlen.");
+
+    TestData data6(
+        "3",
+        {{"10", "-1", "2"},{"1", "11", "-1"}},
+        {"7", "7", "7"},
+        "Fehler: Keine Zeile mehr für Vektor b.");
+
+    TestData data7(
+        "3",
+        {{"10", "-1", "2"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7", "A"},
+        "Fehler bei Zeile für b: keine gültigen Zahlen.");
+
+    TestData data8(
+        "3",
+        {{"10", "-1", "2"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7"},
+        "Fehler: b muss genau 3 Zahlen enthalten.");
+
+    TestData data9(
+        "3",
+        {{"10", "-1", "2"},{"1", "11", "-1"}, {"2", "-1", "10"}, {"7", "7", "7"}},
+        {"1", "2", "3"},
+        "Fehler: Datei enthält mehr Zeilen als erwartet. Erlaubt: 5 Zeilen, gefunden: mindestens 6");
+
+    TestData data10(
+        "3",
+        {{"10", "-1", "2"},{"1", "11", "-1"}, {"2", "-1", "10"}},
+        {"7", "7", "7"},
+        "Lösbar");
+
+    TestData data11(
+        "5",
+        {{"1", "2", "3", "4", "5"},
+         {"2", "3", "4", "5", "6"},
+         {"3", "4", "5", "6", "7"},
+         {"4", "5", "6", "7", "8"},
+         {"5", "6", "7", "8", "9"}},
+        {"1", "2", "3", "4", "5"},
+        "Verfahren nicht anwendbar"
+    );
