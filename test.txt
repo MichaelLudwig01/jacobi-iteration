@@ -1,4 +1,4 @@
-Im Normalen vorgehen führen sie den Namen das Programm aus und übergen sie den Dateinamen als Parameter.
+Im Normalen vorgehen führen sie den Namen das Programms aus und übergen sie den Dateinamen als Parameter.
 -> ./solver example
 
 Um das Programm zu testen verwenden sie den Parameter "test" das ist ein Schlüsselwort um dem Programm mitzuteilen das dieses getestet wird.

@@ -24,7 +24,7 @@ public:
      * @param filename Name der Textdatei.
      * @param isTest Gibt an, ob der Konstruktor im Testmodus aufgerufen wird.
      */
-    Matrix(const std::string& filename, bool isTest = false);
+    Matrix(const std::string& filename, bool istTest = false);
 
     /**
      * @brief Destruktor.
@@ -62,7 +62,7 @@ private:
     std::vector<std::vector<double>> A;  ///< Matrix A.
     std::vector<double> b;  ///< Vektor b.
     std::string filename;  ///< Dateiname.
-    bool isTestMode;  ///< Gibt an, ob die Klasse im Testmodus ist.
+    bool istTestMode;  ///< Gibt an, ob die Klasse im Testmodus ist.
     std::string testOutput;  ///< Testausgabe.
 
     /**

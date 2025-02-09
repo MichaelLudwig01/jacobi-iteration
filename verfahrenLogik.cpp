@@ -10,14 +10,14 @@ bool Matrix::verfahrenAnewendbar() {
             }
         }
         if (diag <= sumOffDiag) {
-            if (isTestMode) {
+            if (istTestMode) {
                 testOutput = "Verfahren ist nicht anwendbar";
             }
             return false;
         }
     }
 
-    if (isTestMode) {
+    if (istTestMode) {
         testOutput = "Verfahren ist anwendbar";
     }
 

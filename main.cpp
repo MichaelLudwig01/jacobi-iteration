@@ -9,7 +9,8 @@
  *   Dieses Programm löst iterativ ein lineares Gleichungssystem mit einer Matrix-Klasse.
  *
  * Aufrufbeispiel:
- *   ./solver input.txt
+ *   ./solver example
+ *   ./solver test
  */
 
 
@@ -20,14 +21,14 @@
 
 /**
  * @brief main-Funktion zum Einlesen und Lösen eines LGS via Jacobi-Iteration.
- *
+ * @brief main-Funktion zum testen aller Testszenarien..
  * Aufrufbeispiel:
- *   ./solver input.txt
+ *   ./solver example
  */
 int main(int argc, char* argv[])
 {
     if (argc < 2) {
-        std::cerr << "Aufruf: " << argv[0] << " <filename>\n";
+        std::cerr << "Aufruf: " << argv[0] << " <filename>" << std::endl;;
         return 1;
     }
 
@@ -36,28 +37,28 @@ int main(int argc, char* argv[])
     if (filename == "test" || filename == "Test" || filename == "TEST") {
 
         Test testClass;
-        std::cout << "Testdaten wurden erstellt.\n";
+        std::cout << "Testdaten wurden erstellt." << std::endl;;
         testClass.testeAlles();
 
     } else {
         Matrix solver(filename);
 
         if (!solver.verfahrenAnewendbar()) {
-            std::cerr << "Dieses Verfahren ist nicht anwendbar!\n";
+            std::cerr << "Dieses Verfahren ist nicht anwendbar!" << std::endl;;
             return 2;
         }
 
         std::vector<double> loesung = solver.gleichungssystemLoesen();
-        std::cout << "Lösung wurde berechnet:\n";
+        std::cout << "Lösung wurde berechnet:" << std::endl;;
         for (unsigned long i = 0; i < loesung.size(); i++) {
-            std::cout << "x[" << i << "] = " << loesung[i] << "\n";
+            std::cout << "x[" << i << "] = " << loesung[i] << "" << std::endl;;
         };
-        std::cout << "\n";
+        std::cout << "" << std::endl;;
         if (!solver.loesungValidieren(loesung)) {
-            std::cerr << "Die Lösung hat den Test nicht bestanden.\n";
+            std::cerr << "Die Lösung hat den Test nicht bestanden." << std::endl;;
             return 3;
         } else {
-            std::cout << "Die Lösung hat den Test bestanden.\n";
+            std::cout << "Die Lösung hat den Test bestanden." << std::endl;;
         }
     }
 
